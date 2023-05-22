@@ -1,11 +1,12 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "./useLocalStorage";
 import api from "../api/api";
 
 const AuthContext = createContext({});
 
 export function AuthProvider({children}:any){
-    const [user,setUser] = useState(null);
+    const [user,setUser] = useLocalStorage("user",null);
     const navigate = useNavigate();
 
     const login = async () => {

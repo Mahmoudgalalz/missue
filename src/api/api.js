@@ -16,8 +16,11 @@ let api ={
         return api.kit
     },
     createAccount: ()=>{
-        return api.provider().account.createOAuth2Session('github');
-    }
+        return api.provider().account.createOAuth2Session('github','/dash');
+    },
+    deleteCurrentSession: () => {
+        return api.provider().account.deleteSession("current");
+    },
 }
 
 export default api

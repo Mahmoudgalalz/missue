@@ -5,6 +5,7 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import ErrorPage from './pages/error.tsx'
 import {Auth} from './pages/OAuth/Auth'
+import { Dash } from './pages/dash/Dash.tsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path:"/auth",
     element: <Auth/>
+  },
+  {
+    path:"/dash",
+    element: <Dash/>
   }
 ])
 
